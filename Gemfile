@@ -1,10 +1,11 @@
 source "https://rubygems.org"
 
-gem "jets", "~> 4.0.0"
-
+gem "jets", "~> 4.0.4"
+#gem "jets", path: "/Users/jeremiah.parrack/freelance/jets"
 # Include jetpacker if you are building html pages
 gem "jetpacker"
-gem 'revise_auth-jets', '~> 0.2.5'
+gem 'revise_auth-jets', '~> 0.2.9'
+gem "pry"
 
 # Include pg gem if you are using ActiveRecord, remove next line
 # and config/database.yml file if you are not

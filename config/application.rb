@@ -2,6 +2,7 @@ Jets.application.configure do
   config.project_name = "demoAuth"
   config.mode = "html"
 
+  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000, protocol: "https" }
   config.prewarm.enable = true # default is true
   # config.prewarm.rate = '30 minutes' # default is '30 minutes'
   # config.prewarm.concurrency = 2 # default is 2
