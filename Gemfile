@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "jets", "~> 4.0.4"
 #gem "jets", path: "/Users/jeremiah.parrack/freelance/jets"
 # Include jetpacker if you are building html pages
-gem "jetpacker"
+gem "jetpacker", path: "/Users/jeremiah.parrack/freelance/jets-apps/jetpacker"
 gem 'revise_auth-jets', '~> 0.3.0'
 gem "pry"
 
