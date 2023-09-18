@@ -1,5 +1,17 @@
 <h1>Log in</h1>
-
+<div class="bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden">
+  <div class="sm:flex sm:items-center px-6 py-4">
+    <div class="text-center sm:text-left sm:flex-grow">
+      <div class="mb-4">
+        <p class="text-xl leading-tight">Jeremiah</p>
+        <p class="text-sm leading-tight text-grey-dark">Test style</p>
+      </div>
+      <div>
+        <button class="text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-white">Message</button>
+      </div>
+    </div>
+  </div>
+</div>
 <%= form_with(url: login_path, local: true) do |form| %>
   <div>
     <%= form.label :email %>
