@@ -177,6 +177,7 @@ button[disabled]        .when-enabled { display: none; }
     line-height: 48px;
   }
 
+
   .btn-primary {
     @apply bg-blue-600 text-white focus:ring-blue-500;
 
@@ -213,6 +214,7 @@ button[disabled]        .when-enabled { display: none; }
     }
   }
 
+
   .btn-tertiary {
     @apply bg-neutral-800 text-white focus:ring-neutral-700;
 
@@ -230,6 +232,7 @@ button[disabled]        .when-enabled { display: none; }
       }
     }
   }
+
 
   .btn-danger {
     @apply bg-red-600 text-white focus:ring-red-500;
