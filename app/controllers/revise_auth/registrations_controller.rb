@@ -9,6 +9,7 @@ class ReviseAuth::RegistrationsController < ReviseAuthController
     @user = User.new(sign_up_params)
     if @user.save
       login(@user)
+      current_user.api_tokens.first_or_create(name: ApiToken::APP_NAME)
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
@@ -29,7 +30,7 @@ class ReviseAuth::RegistrationsController < ReviseAuthController
   def delete
     current_user.destroy
     logout
-    redirect_to root_path, status: :see_other, alert: I18n.t("revise_auth.account_deleted")
+    redirect_to root_path
   end
 
   private
