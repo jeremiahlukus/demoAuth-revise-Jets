@@ -28,3 +28,5 @@ group :test do
   gem 'launchy'
   gem 'capybara'
 end
+
+gem 'jbuilder-jets'
