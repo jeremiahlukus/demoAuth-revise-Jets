@@ -125,11 +125,6 @@ GEM
     hashie (5.0.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
-    jbuilder-jets (0.1.0)
-      jbuilder (>= 2.10)
     jetpacker (0.7.0)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
@@ -272,7 +267,6 @@ DEPENDENCIES
   byebug
   capybara
   dynomite
-  jbuilder-jets
   jetpacker
   jets (~> 4.0.4)
   launchy
