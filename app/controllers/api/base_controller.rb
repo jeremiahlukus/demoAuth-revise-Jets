@@ -19,7 +19,7 @@ class Api::BaseController < ApplicationController
     if user_from_token
       login(user_from_token)
     else
-      head :unauthorized
+      render status: :unauthorized, json: {}
     end
   end
 
