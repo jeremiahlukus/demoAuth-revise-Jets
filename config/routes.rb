@@ -24,7 +24,10 @@ Jets.application.routes.draw do
   end
   # Admin Routes
   namespace :admin do
-     root "dashboard#show"
+    resource :users
+    get "users/:id", to: "users#show", as: :admin_user_show
+    get "users", to: "users#index", as: :admin_users
+    root "dashboard#show"
   end
 
 
