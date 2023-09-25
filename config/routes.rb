@@ -22,6 +22,13 @@ Jets.application.routes.draw do
 
     delete "logout", to: "sessions#delete"
   end
+  # Admin Routes
+  namespace :admin do
+     root "dashboard#show"
+  end
+
+
+
   # API routes
   namespace :api do
     namespace :v1 do
