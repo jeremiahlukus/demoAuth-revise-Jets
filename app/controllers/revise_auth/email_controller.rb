@@ -12,7 +12,11 @@ class ReviseAuth::EmailController < ReviseAuthController
   end
 
   def update
-    if current_user.update(email_params)
+    email = current_user.email
+    current_user.update(email_params)
+    if email != params[:user][:unconfirmed_email]
+      current_user.confirmation_sent_at = Time.now
+      current_user.save
       current_user.send_confirmation_instructions
       #flash[:notice] = I18n.t("revise_auth.confirmation_email_sent", email: current_user.unconfirmed_email)
     end

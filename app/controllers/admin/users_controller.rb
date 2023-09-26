@@ -14,8 +14,12 @@ class Admin::UsersController < AdminController
   end
 
   def update
-    @user= User.find(params[:user][:id])
-    if @user.update(email_params)
+    @user = User.find(params[:user][:id])
+    email = @user.email
+    @user.update(email_params)
+    if email != params[:user][:unconfirmed_email]
+      @user.confirmation_sent_at = Time.now
+      @user.save
       @user.send_confirmation_instructions
       #flash[:notice] = I18n.t("revise_auth.confirmation_email_sent", email: current_user.unconfirmed_email)
     end
@@ -36,7 +40,6 @@ class Admin::UsersController < AdminController
   def delete
     ApiToken.find_by(token: params[:id]).destroy
     redirect_back(fallback_location: root_path)
-    #redirect_to admin_users_path
   end
 
 
