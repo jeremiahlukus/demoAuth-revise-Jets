@@ -1,1 +1,63 @@
-<%= @user.email %>
+<main class="w-full flex-grow p-6">
+<div class="w-full mt-12">
+    <p class="text-xl pb-3 flex items-center">
+    <i class="fas fa-list mr-3"></i> User
+    </p>
+    <div class="bg-white overflow-auto">
+      <table class="text-left w-full border-collapse">
+        <thead>
+          <tr>
+            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Created At</th>
+            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">First Name</th>
+            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Last Name</th>
+            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Email</th>
+            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-grey-lighter">
+            <td class="py-4 px-6 border-b border-grey-light"><%= @user.created_at %></td>
+            <td class="py-4 px-6 border-b border-grey-light"><%= @user.first_name %></td>
+            <td class="py-4 px-6 border-b border-grey-light"><%= @user.last_name %></td>
+            <td class="py-4 px-6 border-b border-grey-light"><%= @user.email %></td>
+            <td class="py-4 px-6 border-b border-grey-light">
+              <i class="fa-regular fa-trash-can mr-3"> </i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="w-full mt-12">
+    <p class="text-xl pb-3 flex items-center">
+    <i class="fas fa-list mr-3"></i> ApiTokens
+    </p>
+    <div class="bg-white overflow-auto">
+      <table class="text-left w-full border-collapse">
+        <thead>
+          <tr>
+            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Created At</th>
+            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Expires At</th>
+            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Token</th>
+            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tokens.each do |token| %>
+            <tr class="hover:bg-grey-lighter">
+              <td class="py-4 px-6 border-b border-grey-light"><%= token.created_at %></td>
+              <td class="py-4 px-6 border-b border-grey-light"><%= token.expires_at%></td>
+              <td class="py-4 px-6 border-b border-grey-light"><%= token.token %></td>
+              <td class="py-4 px-6 border-b border-grey-light">
+             <%= link_to profile_path, local: true, method: :delete do  %>
+                <i class="fa-regular fa-trash-can mr-3"> </i>
+              <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

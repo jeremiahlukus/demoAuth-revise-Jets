@@ -7,6 +7,7 @@ class Admin::UsersController < AdminController
 
   # GET /accounts/1
   def show
+    @tokens = @user.api_tokens
   end
 
   def create
