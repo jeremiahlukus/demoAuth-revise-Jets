@@ -1,5 +1,5 @@
 class Admin::UsersController < AdminController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :switch]
+  before_action :set_user, only: [:show, :edit, :destroy, :switch]
 
   def index
     @users = User.all
@@ -14,7 +14,14 @@ class Admin::UsersController < AdminController
   end
 
   def update
+    @user= User.find(params[:user][:id])
+    if @user.update(email_params)
+      @user.send_confirmation_instructions
+      #flash[:notice] = I18n.t("revise_auth.confirmation_email_sent", email: current_user.unconfirmed_email)
+    end
+    redirect_back(fallback_location: root_path)
   end
+
 
   # GET /accounts/new
   def new
@@ -27,10 +34,17 @@ class Admin::UsersController < AdminController
 
   # DELETE /accounts/1
   def delete
-    @user.destroy
+    ApiToken.find_by(token: params[:id]).destroy
+    redirect_back(fallback_location: root_path)
+    #redirect_to admin_users_path
   end
 
+
   private
+
+  def email_params
+    params.require(:user).permit(:first_name, :last_name, :unconfirmed_email)
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user

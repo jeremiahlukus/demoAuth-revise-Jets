@@ -1,40 +1,85 @@
+GIT
+  remote: https://github.com/boltops-tools/jets.git
+  revision: a9c37877a2401cfc7e48e091b5840b24e67c7f36
+  specs:
+    jets (5.0.0.beta1)
+      actionmailer (~> 7.0.8)
+      actionpack (~> 7.0.8)
+      actionview (~> 7.0.8)
+      activerecord (~> 7.0.8)
+      activesupport (~> 7.0.8)
+      aws-mfa-secure (~> 0.4.0)
+      aws-sdk-apigateway
+      aws-sdk-cloudformation
+      aws-sdk-cloudwatchlogs
+      aws-sdk-dynamodb
+      aws-sdk-kinesis
+      aws-sdk-lambda
+      aws-sdk-s3
+      aws-sdk-sns
+      aws-sdk-sqs
+      aws-sdk-ssm
+      cfn-status
+      cfn_camelizer (>= 0.4.9)
+      cfn_response
+      cli-format (>= 0.3.0)
+      dotenv
+      dsl_evaluator (>= 0.3.0)
+      gems
+      hashie
+      jets-html-sanitizer
+      kramdown
+      memoist
+      mini_mime
+      rack
+      railties (~> 7.0.8)
+      rainbow
+      recursive-open-struct
+      serverlessgems (>= 0.2.0)
+      shotgun
+      text-table
+      thor
+      zeitwerk (>= 2.6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (6.1.7.6)
-      actionpack (= 6.1.7.6)
-      actionview (= 6.1.7.6)
-      activejob (= 6.1.7.6)
-      activesupport (= 6.1.7.6)
+    actionmailer (7.0.8)
+      actionpack (= 7.0.8)
+      actionview (= 7.0.8)
+      activejob (= 7.0.8)
+      activesupport (= 7.0.8)
       mail (~> 2.5, >= 2.5.4)
+      net-imap
+      net-pop
+      net-smtp
       rails-dom-testing (~> 2.0)
-    actionpack (6.1.7.6)
-      actionview (= 6.1.7.6)
-      activesupport (= 6.1.7.6)
-      rack (~> 2.0, >= 2.0.9)
+    actionpack (7.0.8)
+      actionview (= 7.0.8)
+      activesupport (= 7.0.8)
+      rack (~> 2.0, >= 2.2.4)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.2.0)
-    actionview (6.1.7.6)
-      activesupport (= 6.1.7.6)
+    actionview (7.0.8)
+      activesupport (= 7.0.8)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activejob (6.1.7.6)
-      activesupport (= 6.1.7.6)
+    activejob (7.0.8)
+      activesupport (= 7.0.8)
       globalid (>= 0.3.6)
-    activemodel (6.1.7.6)
-      activesupport (= 6.1.7.6)
-    activerecord (6.1.7.6)
-      activemodel (= 6.1.7.6)
-      activesupport (= 6.1.7.6)
-    activesupport (6.1.7.6)
+    activemodel (7.0.8)
+      activesupport (= 7.0.8)
+    activerecord (7.0.8)
+      activemodel (= 7.0.8)
+      activesupport (= 7.0.8)
+    activesupport (7.0.8)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     aws-eventstream (1.2.0)
@@ -108,12 +153,21 @@ GEM
       memoist
       rainbow
     cfn_response (0.2.0)
+    cli-format (0.3.0)
+      activesupport
+      text-table
+      zeitwerk
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
     diff-lcs (1.5.0)
     dotenv (2.8.1)
+    dsl_evaluator (0.3.1)
+      activesupport
+      memoist
+      rainbow
+      zeitwerk
     dynomite (1.2.7)
       activesupport
       aws-sdk-dynamodb
@@ -130,42 +184,6 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    jets (4.0.4)
-      actionmailer (~> 6.1.0)
-      actionpack (~> 6.1.0)
-      actionview (~> 6.1.0)
-      activerecord (~> 6.1.0)
-      activesupport (~> 6.1.0)
-      aws-mfa-secure (~> 0.4.0)
-      aws-sdk-apigateway
-      aws-sdk-cloudformation
-      aws-sdk-cloudwatchlogs
-      aws-sdk-dynamodb
-      aws-sdk-kinesis
-      aws-sdk-lambda
-      aws-sdk-s3
-      aws-sdk-sns
-      aws-sdk-sqs
-      aws-sdk-ssm
-      cfn-status
-      cfn_camelizer (>= 0.4.9)
-      cfn_response
-      dotenv
-      gems
-      hashie
-      jets-html-sanitizer
-      kramdown
-      memoist
-      mini_mime
-      rack
-      railties (~> 6.1.0)
-      rainbow
-      recursive-open-struct
-      serverlessgems (>= 0.2.0)
-      shotgun
-      text-table
-      thor
-      zeitwerk (>= 2.6.0)
     jets-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
     jmespath (1.6.2)
@@ -218,12 +236,13 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    railties (6.1.7.6)
-      actionpack (= 6.1.7.6)
-      activesupport (= 6.1.7.6)
+    railties (7.0.8)
+      actionpack (= 7.0.8)
+      activesupport (= 7.0.8)
       method_source
       rake (>= 12.2)
       thor (~> 1.0)
+      zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
     recursive-open-struct (1.1.3)
@@ -268,7 +287,7 @@ DEPENDENCIES
   capybara
   dynomite
   jetpacker
-  jets (~> 4.0.4)
+  jets!
   launchy
   pg
   pry

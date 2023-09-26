@@ -23,6 +23,6 @@ class ReviseAuth::EmailController < ReviseAuthController
   private
 
   def email_params
-    params.require(:user).permit(:unconfirmed_email)
+    params.require(:user).permit(:first_name, :last_name, :unconfirmed_email)
   end
 end

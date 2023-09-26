@@ -1,12 +1,12 @@
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "jets", "~> 4.0.4"
+gem "jets", github: "boltops-tools/jets"
 #gem "jets", path: "/Users/jeremiah.parrack/freelance/jets"
 # Include jetpacker if you are building html pages
 gem "jetpacker"
 gem 'revise_auth-jets', '~> 0.3.2'
 gem "pry"
-
 # Include pg gem if you are using ActiveRecord, remove next line
 # and config/database.yml file if you are not
 gem "pg"
