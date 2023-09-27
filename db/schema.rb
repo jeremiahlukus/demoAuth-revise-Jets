@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2023_09_20_002950) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.boolean "admin"
     t.string "first_name"
     t.string "last_name"
     t.datetime "created_at", precision: 6, null: false
