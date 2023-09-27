@@ -1,56 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="theme-color" content="#000000">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <%= csrf_meta_tags %>
-  <title>Jets App</title>
-  <%= javascript_pack_tag "application" %>
-  <%= stylesheet_pack_tag "theme" %>
-   <link rel="shortcut icon" href="<%= favicon_path %>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <%= csrf_meta_tags %>
+    <title>Jets App</title>
+    <%= javascript_pack_tag "application" %>
+    <%= stylesheet_pack_tag "theme" %>
+    <link rel="shortcut icon" href="<%= favicon_path %>">
 
-</head>
-<body>
-<section class="starter">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9 content-body">
-        <% if @title %><h1><%= @title %></h1><% end %>
-        <%= yield %>
+  </head>
+  <body>
+    <section class="starter">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 content-body">
+            <% if @title %><h1><%= @title %></h1><% end %>
+            <%= yield %>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-</body>
-<!-- Font Awesome -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-
-<script>
-  function hideMenuMobile() {
-    var x = document.getElementById("bars");
-    var y = document.getElementById("times");
-    var z = document.getElementById("dropdownNav");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-      y.style.display = "none";
-      z.style.display = "none";
-    } else {
-      y.style.display = "block";
-      z.style.display = "block";
-      x.style.display = "none";
-    }
-  }
-
-  function hideMenu() {
-    var x = document.getElementById("menuBtn");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-</script>
-
+    </section>
+  </body>
 </html>
